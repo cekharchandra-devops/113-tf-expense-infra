@@ -53,3 +53,22 @@ variable "bastion_sg_tags" {
   }
   
 }
+
+variable "app_alb_sg_tags" {
+  default = {
+    Component = "app-alb"
+  }
+  
+}
+
+variable "vpn_sg_tags" {
+  default = {
+    Component = "vpn"
+  }
+}
+
+variable "web_alb_sg_tags" {
+  default = {
+    Component = "web-alb"
+  }
+}

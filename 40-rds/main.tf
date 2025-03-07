@@ -77,3 +77,21 @@ module "mysql" {
 #     },
 #   ]
 }
+
+module "records" {
+  source  = "terraform-aws-modules/route53/aws//modules/records"
+
+  zone_name = var.domain_name
+
+  records = [
+    {
+      name    = "mysql-${var.environment}"
+      type    = "CNAME"
+      ttl     = 1
+      records = [
+        module.mysql.db_instance_address
+      ]
+    },
+  ]
+
+}

@@ -16,6 +16,13 @@ variable "common_tags" {
   }
 }
 
+variable "app_alb_sg_tags" {
+  default = {
+    Component = "app-alb"
+  }
+  
+}
+
 variable "domain_name" {
   type = string
   default = "devsecmlops.online"

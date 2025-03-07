@@ -1,23 +1,25 @@
 variable "project_name" {
-  type = string
   default = "expense"
 }
 
 variable "environment" {
-  type = string
   default = "dev"
 }
 
 variable "common_tags" {
   default = {
-    Project = "Expense"
+    Project = "expense"
     Environment = "dev"
-    terraform = "true"
+    Terraform = "true"
   }
 }
 
-variable "domain_name" {
-  type = string
+variable "backend_tags" {
+  default = {
+    Component = "backend"
+  }
+}
+
+variable "zone_name" {
   default = "devsecmlops.online"
-  
 }
